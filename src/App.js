@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Chamado from './Chamado.js';
-
+import Menu from './Menu.js';
 import './App.css';
 import './css/bootstrap.css';
+import Botoes from './Botoes.js';
 
-var demandas = [{chamado:'1', nome:'Renato', assunto:'pagamnento',mensagem:'quando serei pago?'},
-{nome:'2', assunto:'férias',mensagem:'minhas férias não estão no sistema', chamado:'2'},
-{nome:'3', assunto:'licença',mensagem:'posso sair de çlicença novamente?', chamado:'3'},
-{nome:'4', assunto:'teste',mensagem:'ops', chamado:'4'},]
+var demandas = [{numChamado:'1', nome:'Renato', assunto:'Front',masp:'1321321',mensagem:'Consegue visualizar tudo'},
+{numChamado:'2', nome:'Michel', assunto:'Back',masp:'321654',mensagem:'Consegue visualizar tudo'},
+{numChamado:'3', nome:'Claudio', assunto:'Suporte',masp:'987654132',mensagem:'Consegue visualizar tudo'},
+{numChamado:'4', nome:'Luiz', assunto:'Full',masp:'564/654',mensagem:'Consegue visualizar tudo'},
+{numChamado:'5', nome:'Endrew', assunto:'DBA',masp:'312465',mensagem:'Consegue visualizar tudo'},]
 
 class App extends Component {
 
@@ -20,23 +22,27 @@ class App extends Component {
   
   render() {
     return (
+      
       <div className="container-fluir">
+      <Menu></Menu>
         <table className='table'>
           <thead>
-            
             <th>
-              Assunto
+              Nome
             </th>
             <th>
-              Mensagem
+              Cod.
             </th>
             <th>
-               Atendente 
+               Assunto 
+            </th>
+            <th>
+              Masp
             </th>
           </thead>
           <tbody>
           {this.state.dems.map(function(a,i){
-            return (<Chamado nome={a.nome} assunto={a.assunto} mensagem={a.mensagem} atendente={a.chamado} /> )
+            return (<Chamado numChamado={a.numChamado} nome={a.nome} assunto={a.assunto} mensagem={a.mensagem} masp={a.masp} /> )
 
           })}
           </tbody>
