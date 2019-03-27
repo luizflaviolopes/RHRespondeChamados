@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './css/bootstrap.css';
-import Menu from 'Menu.js'
+import Menu from './Menu.js'
 
 class App extends Component {
   render() {
