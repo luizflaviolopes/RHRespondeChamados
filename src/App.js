@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Chamado from './Chamado.js';
 
 import './App.css';
+import './css/bootstrap.css';
+import Menu from './Menu.js'
 
 var demandas = [{chamado:'1', nome:'1', assunto:'pagamnento',mensagem:'quando serei pago?'},
 {nome:'2', assunto:'férias',mensagem:'minhas férias não estão no sistema', chamado:'2'},
