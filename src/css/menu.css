@@ -1,11 +1,59 @@
-.menu nav
+.slide.r10 {
+    height: 10rem;
+    background-image: linear-gradient(rgba(0,0,0,0.79), rgba(0,0,0,0.7)), url(../img/slide.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+}
+.slide .logo
 {
-    padding: 10px;
-    background-color: #000000c9;
+    background-image: linear-gradient(rgba(255,255,255,1), rgba(255, 255, 255, 0));
+    height: 10rem;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+.logo img
+{
+    height: 90px;
+    text-align: center;
+    margin: 0.6rem;
+}
+.menu
+{
+    height: 5rem;
+    width: 100%;
+    background-color: #841E19;
+    color: #FFF8F0;
+    padding: 1%;
+    text-align: center;
     
 }
-
-.menu nav button
+.menu nav .btn-menu
 {
-    margin-left: 3px;
+    background-color: #841E19;
+    color: #FFF8F0;
+}
+.menu nav .btn-menu:hover
+{
+    background-color: #9A4642;
+}
+
+.rodape
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #841E19;  
+    color: #000000;
+    padding: 2%;
+    color: #FFF;
+    margin-top: 10px;
+
+}
+.rodape nav
+{
+    text-align: center;
 }

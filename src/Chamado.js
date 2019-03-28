@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import './css/bootstrap.css';
 
 
@@ -6,16 +7,19 @@ class Chamado extends Component {
 
     constructor(props){
         super(props);
-        this.state = {numChamado: props.numChamado, solicitante: props.solicitante ,assunto:props.assunto,data:props.data, status:props.status};
+        this.state = {redirect: false, numChamado: props.numChamado, solicitante: props.solicitante ,assunto:props.assunto,data:props.data, status:props.status};
         this.OnclickHande = this.OnclickHande.bind(this);
       }
 
       OnclickHande(){
         console.log('clicado na linha de chamado '+ this.state.numChamado);
-        
+        this.setState({redirect: true});
       }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={{pathname: "/Sobre", state: {...this.state}}} />;
+    }
     return (
       <tr onClick={this.OnclickHande}>
           <td >{this.state.numChamado}</td>

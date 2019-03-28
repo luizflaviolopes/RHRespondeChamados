@@ -17,35 +17,35 @@ class TabelaIndex extends Component {
 
       render() {
         return(
+          <div className="container">
+            <table className='table table-striped'>
+              <thead>
+                <tr>
+                  <th>
+                    Nº do Chamado
+                  </th>
+                  <th>
+                    Solicitante
+                  </th>
+                  <th>
+                    Assunto 
+                  </th>
+                  <th>
+                    Data
+                  </th>
+                  <th>
+                    Status
+                    </th>
+                </tr>
+              </thead>
+              <tbody>
+                {this.state.dems.map(function(a,i){
+                  return (<Chamado numChamado={a.numChamado} solicitante={a.solicitante} assunto={a.assunto} data={a.data} status={a.status} /> )
 
-            <table className='table'>
-          <thead>
-            <tr>
-            <th>
-              Nº do Chamado
-            </th>
-            <th>
-              Solicitante
-            </th>
-            <th>
-               Assunto 
-            </th>
-            <th>
-              Data
-            </th>
-            <th>
-              Status
-              </th>
-            </tr>
-          </thead>
-          
-          <tbody>
-          {this.state.dems.map(function(a,i){
-            return (<Chamado numChamado={a.numChamado} solicitante={a.solicitante} assunto={a.assunto} data={a.data} status={a.status} /> )
-
-          })}
-          </tbody>
-        </table>
+                })}
+              </tbody>
+            </table>
+          </div>
         );
     }
 }
