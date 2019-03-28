@@ -12,13 +12,13 @@ class Chamado extends Component {
       }
 
       OnclickHande(){
-        console.log('clicado na linha de chamado '+ this.state.numChamado);
+        console.log('teste na linha de chamado '+ this.state.numChamado);
         this.setState({redirect: true});
       }
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to={{pathname: "/Sobre", state: {...this.state}}} />;
+      return <Redirect to={{pathname: "/DetalhamentoChamado", state: {...this.state}}} />;
     }
     return (
       <tr onClick={this.OnclickHande}>
