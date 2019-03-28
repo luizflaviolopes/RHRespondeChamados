@@ -6,11 +6,10 @@ import './css/bootstrap.css';
 
 import Botoes from './Botoes.js';
 
-var demandas = [{numChamado:'1', nome:'Renato', assunto:'Front',masp:'1321321',mensagem:'Consegue visualizar tudo'},
-{numChamado:'2', nome:'Michel', assunto:'Back',masp:'321654',mensagem:'Consegue visualizar tudo'},
-{numChamado:'3', nome:'Claudio', assunto:'Suporte',masp:'987654132',mensagem:'Consegue visualizar tudo'},
-{numChamado:'4', nome:'Luiz', assunto:'Full',masp:'564/654',mensagem:'Consegue visualizar tudo'},
-{numChamado:'5', nome:'Endrew', assunto:'DBA',masp:'312465',mensagem:'Consegue visualizar tudo'},]
+var demandas = [{numChamado:'1', solicitante:'Renato', assunto:'Teste',data:'1321321',status:'Em atendimento'},
+{numChamado:'11', solicitante:'Tron', assunto:'Teste',data:'1321321',status:'N/A'},
+{numChamado:'111', solicitante:'Claudinho', assunto:'Teste',data:'1321321',status:'Finalizado'},
+{numChamado:'1111', solicitante:'LF', assunto:'Teste',data:'1321321',status:'Aberto'},]
 
 class App extends Component {
 
@@ -27,32 +26,37 @@ class App extends Component {
       <div className="container-fluir">
       
       <Menu>
-      <Botoes className="btn-primary" label="teste1" styleName="btn-primary" />
+      <Botoes className="btn-primary" label="Relatórios" styleName="btn-primary" />
+      <Botoes className="btn-primary" label="Acompanhamento" styleName="btn-primary" />
 
       </Menu>
 
-
+      
 
         <table className='table'>
           <thead>
             <tr>
             <th>
-              Nome
+              Nº do Chamado
             </th>
             <th>
-              Cod.
+              Solicitante
             </th>
             <th>
                Assunto 
             </th>
             <th>
-              Masp
+              Data
             </th>
+            <th>
+              Status
+              </th>
             </tr>
           </thead>
+          
           <tbody>
           {this.state.dems.map(function(a,i){
-            return (<Chamado numChamado={a.numChamado} nome={a.nome} assunto={a.assunto} mensagem={a.mensagem} masp={a.masp} /> )
+            return (<Chamado numChamado={a.numChamado} solicitante={a.solicitante} assunto={a.assunto} data={a.data} status={a.status} /> )
 
           })}
           </tbody>
