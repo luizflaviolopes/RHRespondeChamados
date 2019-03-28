@@ -7,10 +7,12 @@ class Menu extends Component
         return(
             <div className="menu">
                 <nav>
-                    Teste
+                    {this.props.children}
                 </nav>
             </div>
         );
 
     }
 }
+
+export default Menu;
