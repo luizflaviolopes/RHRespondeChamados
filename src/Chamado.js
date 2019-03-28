@@ -18,7 +18,7 @@ class Chamado extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to={{pathname: "/DetalhamentoChamado", state: {...this.state}}} />;
+      return <Redirect to={{pathname: "/Sobre", state: {...this.state}}} />;
     }
     return (
       <tr onClick={this.OnclickHande}>
