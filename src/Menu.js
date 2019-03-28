@@ -1,25 +1,13 @@
 import React, {Component} from 'react';
 import './css/menu.css';
 
-
-class Botoes extends Component
-{
-    reder(){
-        return(
-            <button title={this.props.label}>
-                {this.props.label}
-            </button>
-        );
-    }
-}
-
 class Menu extends Component
 {
     render(){
         return(
             <div className="menu">
                 <nav>
-                    
+                    {this.props.children}
                 </nav>
             </div>
         );

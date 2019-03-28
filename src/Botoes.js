@@ -4,9 +4,9 @@ import './css/bootstrap.css';
 
 class Botoes extends Component
 {
-    reder(){
+    render(){
         return(
-            <button className={`btn ${ this.props.styleName }`} title={this.props.label}>
+            <button className={'btn '+this.props.styleName } title={this.props.label}>
                 {this.props.label}
             </button>
         );

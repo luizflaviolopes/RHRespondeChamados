@@ -3,6 +3,7 @@ import Chamado from './Chamado.js';
 import Menu from './Menu.js';
 import './App.css';
 import './css/bootstrap.css';
+
 import Botoes from './Botoes.js';
 
 var demandas = [{numChamado:'1', nome:'Renato', assunto:'Front',masp:'1321321',mensagem:'Consegue visualizar tudo'},
@@ -24,7 +25,14 @@ class App extends Component {
     return (
       
       <div className="container-fluir">
-      <Menu></Menu>
+      
+      <Menu>
+      <Botoes className="btn-primary" label="teste1" styleName="btn-primary" />
+
+      </Menu>
+
+
+
         <table className='table'>
           <thead>
             <th>

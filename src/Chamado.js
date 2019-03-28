@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/bootstrap.css';
 
+
 class Chamado extends Component {
 
     constructor(props){
@@ -11,9 +12,8 @@ class Chamado extends Component {
 
       OnclickHande(){
         console.log('clicado na linha de nome '+ this.state.nome);
+        
       }
-
-
 
   render() {
     return (
