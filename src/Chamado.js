@@ -12,7 +12,7 @@ class Chamado extends Component {
 
     constructor(props){
         super(props);
-        this.state = {nome: props.nome ,assunto:props.assunto,mensagem:props.mensagem, atendente:props.atendente};
+        this.state = {nome: props.nome ,assunto:props.assunto,mensagem:props.mensagem, protocolo:props.protocolo};
         this.OnclickHande = this.OnclickHande.bind(this);
       }
 
@@ -27,7 +27,7 @@ class Chamado extends Component {
       <tr onClick={this.OnclickHande}>
           <td style={td}>{this.state.assunto}</td>
           <td style={td}>{this.state.mensagem}</td>
-          <td style={td}>{this.state.atendente}</td>
+          <td style={td}>{this.state.protocolo}</td>
       </tr>
     );
   }
