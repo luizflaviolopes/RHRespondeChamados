@@ -35,6 +35,7 @@ class App extends Component {
 
         <table className='table'>
           <thead>
+            <tr>
             <th>
               Nome
             </th>
@@ -47,14 +48,11 @@ class App extends Component {
             <th>
               Masp
             </th>
+            </tr>
           </thead>
           <tbody>
           {this.state.dems.map(function(a,i){
-<<<<<<< HEAD
-            return (<Chamado nome={a.nome} assunto={a.assunto} mensagem={a.mensagem} protocolo={a.protocolo} /> )
-=======
             return (<Chamado numChamado={a.numChamado} nome={a.nome} assunto={a.assunto} mensagem={a.mensagem} masp={a.masp} /> )
->>>>>>> 0b172c05ce2baa9cb0710953f5f8114dc0694124
 
           })}
           </tbody>
