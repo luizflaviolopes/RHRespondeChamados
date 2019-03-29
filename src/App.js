@@ -4,9 +4,7 @@ import './App.css';
 import './css/bootstrap.css';
 import TabelaIndex from './TabelaIndex.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import {PageChamado} from './PageChamado.js'
-
-
+import {PageChamado} from './PageChamado.js';
 import Botoes from './Botoes.js';
 
 
@@ -25,7 +23,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
             <Route path="/" exact={true} component={TabelaIndex} />
-            <Route path="/sobre" component={PageChamado} />
+            <Route path="/DetalhamentoChamado" component={PageChamado} />
         </Switch>
       </ BrowserRouter>
       <Rodape/>
