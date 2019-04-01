@@ -8,6 +8,12 @@ export class PageChamado extends Component {
     constructor(props){
         super(props);      
     this.state = {...props.location.state}
+    this.handleBack = this.handleBack.bind(this);
+    }
+
+    handleBack()
+    {
+      this.props.history.goBack();
     }
 
       render() {
@@ -66,7 +72,7 @@ export class PageChamado extends Component {
               <div className="form-group">
               <div className="row text-center">
                 <div className="col-4">
-                  <Botoes styleName="btn-danger" label="Voltar"/>
+                  <Botoes styleName="btn-danger" onClick={this.handleBack} label="Voltar"/>
                 </div>
                 <div className="col-4">
                   <Botoes styleName="btn-primary" label="Redirecionar"/>
