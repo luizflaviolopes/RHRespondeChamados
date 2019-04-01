@@ -68,7 +68,7 @@ export class PageChamado extends Component {
               <div className="form-group">
                 <div className="row text-center">
                   <div className="col-4">
-                    <Botoes styleName="btn-danger" label="Voltar" onClick=''/>
+                    <Botoes styleName="btn-danger" label="Voltar"/>
                   </div>
                   <div className="col-4">
                     <Botoes styleName="btn-primary" label="Redirecionar"/>
