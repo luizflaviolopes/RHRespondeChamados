@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './css/PageChamado.css';
 import Botoes from './Botoes.js';
 
+
 export class PageChamado extends Component {
     
     constructor(props){
@@ -11,8 +12,9 @@ export class PageChamado extends Component {
     }
 
       render() {
+        
         return(
-          <div className="container">
+          <div className="container-app">
 
             <div className='PageChamados'>
               <label>
@@ -64,20 +66,17 @@ export class PageChamado extends Component {
                 </p>
               </div>
               <div className="form-group">
-              <div className="row text-center">
-                <div className="col-4">
-                  <Botoes styleName="btn-danger" label="Voltar"/>
-                </div>
-                <div className="col-4">
-                  <Botoes styleName="btn-primary" label="Redirecionar"/>
-                </div>
-                <div className="col-4">
-                  <Botoes styleName="btn-success" label="Responder"/>
-                </div>
-              </div>
-                
-                
-                
+                <div className="row text-center">
+                  <div className="col-4">
+                    <Botoes styleName="btn-danger" label="Voltar" onClick=''/>
+                  </div>
+                  <div className="col-4">
+                    <Botoes styleName="btn-primary" label="Redirecionar"/>
+                  </div>
+                  <div className="col-4">
+                    <Botoes styleName="btn-success" label="Responder"/>
+                  </div>
+                </div>                
               </div>
             </div>
           </div>

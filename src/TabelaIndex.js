@@ -37,7 +37,7 @@ class TabelaIndex extends Component {
 
       render() {
         return(
-          <div className="container">
+          <div className="container-app">
             <table className='table table-striped'>
               <thead>
                 <tr>

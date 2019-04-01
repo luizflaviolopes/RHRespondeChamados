@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Menu, { Cabecalho, Rodape } from './Menu.js';
-import './App.css';
+import './css/App.css';
 import './css/bootstrap.css';
 import TabelaIndex from './TabelaIndex.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
@@ -20,12 +20,20 @@ class App extends Component {
         <Botoes label="Acompanhamento" styleName="btn-menu" />
         <Botoes label="Respostas Automaticas" styleName="btn-menu" />
       </Menu>
-      <BrowserRouter>
-        <Switch>
-            <Route path="/" exact={true} component={TabelaIndex} />
-            <Route path="/DetalhamentoChamado" component={PageChamado} />
-        </Switch>
-      </ BrowserRouter>
+      <div className="row">
+        <div className="col-2">
+
+        </div>
+        <div className="col-10">
+          <BrowserRouter>
+            <Switch>
+                <Route path="/" exact={true} component={TabelaIndex} />
+                <Route path="/DetalhamentoChamado" component={PageChamado} />
+            </Switch>
+          </BrowserRouter>
+        </div>
+      </div>
+      
       <Rodape/>
       </div>
     );
