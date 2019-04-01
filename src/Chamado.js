@@ -17,11 +17,7 @@ class Chamado extends Component {
 
   render() {
     if (this.state.redirect) {
-<<<<<<< HEAD
       return <Redirect push to={{pathname: "/DetalhamentoChamado", state: {...this.state}}} />;
-=======
-      return <Redirect path to={{pathname: "/DetalhamentoChamado", state: {...this.state}}} />;
->>>>>>> bf6f814b08bd962cdf6601bf639311a3fde4e9ec
     }
     return (
       <tr onClick={this.OnclickHande}>
