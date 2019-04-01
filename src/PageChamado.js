@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './css/PageChamado.css';
 import Botoes from './Botoes.js';
 
+
 export class PageChamado extends Component {
     
     constructor(props){
@@ -17,8 +18,9 @@ export class PageChamado extends Component {
     }
 
       render() {
+        
         return(
-          <div className="container">
+          <div className="container-app">
 
             <div className='PageChamados'>
               <label>

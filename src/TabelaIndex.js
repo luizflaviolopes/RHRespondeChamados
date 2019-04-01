@@ -57,7 +57,7 @@ class TabelaIndex extends Component {
         );
         else
         return(
-          <div className="container">
+          <div className="container-app">
             <table className='table table-striped'>
               <thead>
                 <tr>
