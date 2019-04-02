@@ -1,19 +1,25 @@
 
 import React, { Component } from 'react';
-import './css/PageChamado.css';
-import Botoes from './Botoes.js';
+import '../css/PageChamado.css';
+import Botoes from '../Layout/Botoes.js';
+
 
 export class PageChamado extends Component {
     
     constructor(props){
         super(props);      
     this.state = {...props.location.state}
+    this.handleBack = this.handleBack.bind(this);
+    }
+
+    handleBack()
+    {
+      this.props.history.goBack();
     }
 
       render() {
         return(
-          <div className="container">
-
+          <div className="container-app">
             <div className='PageChamados'>
               <label>
                 Chamado {this.state.numChamado}
@@ -64,20 +70,17 @@ export class PageChamado extends Component {
                 </p>
               </div>
               <div className="form-group">
-              <div className="row text-center">
-                <div className="col-4">
-                  <Botoes styleName="btn-danger" label="Voltar"/>
+                <div className="row text-center">
+                  <div className="col-4">
+                    <Botoes styleName="btn-danger" onClick={this.handleBack} label="Voltar"/>
+                  </div>
+                  <div className="col-4">
+                    <Botoes styleName="btn-primary" label="Redirecionar"/>
+                  </div>
+                  <div className="col-4">
+                    <Botoes styleName="btn-success" label="Responder"/>
+                  </div>
                 </div>
-                <div className="col-4">
-                  <Botoes styleName="btn-primary" label="Redirecionar"/>
-                </div>
-                <div className="col-4">
-                  <Botoes styleName="btn-success" label="Responder"/>
-                </div>
-              </div>
-                
-                
-                
               </div>
             </div>
           </div>

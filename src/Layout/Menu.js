@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './css/menu.css';
-import logo from './img/logo_rhresponde_form_old.png';
+import '../css/menu.css';
+import logo from '../img/logo_rhresponde_form_old.png';
 
 export class Cabecalho extends Component
 {
