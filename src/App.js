@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import Menu, { Cabecalho, Rodape } from './Menu.js';
+import Menu, { Cabecalho, Rodape } from './Layout/Menu.js';
 import './css/App.css';
 import './css/bootstrap.css';
-import TabelaIndex from './TabelaIndex.js';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faIgloo } from '@fortawesome/free-solid-svg-icons';
+import TabelaIndex from './ChamadosRH/TabelaIndex.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import {PageChamado} from './PageChamado.js';
-import Botoes from './Botoes.js';
+import {PageChamado} from './ChamadosRH/PageChamado.js';
+import Botoes from './Layout/Botoes.js';
+
 
 
 class App extends Component {

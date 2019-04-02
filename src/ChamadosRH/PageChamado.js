@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import './css/PageChamado.css';
-import Botoes from './Botoes.js';
+import '../css/PageChamado.css';
+import Botoes from '../Layout/Botoes.js';
 
 
 export class PageChamado extends Component {
@@ -21,7 +21,6 @@ export class PageChamado extends Component {
         
         return(
           <div className="container-app">
-
             <div className='PageChamados'>
               <label>
                 Chamado {this.state.numChamado}

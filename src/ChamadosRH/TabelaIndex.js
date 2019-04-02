@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/bootstrap.css';
+import '../css/bootstrap.css';
 import Chamado from './Chamado.js';
 
 
@@ -38,14 +38,14 @@ class TabelaIndex extends Component {
       }
 
       BuscarNovo(){
-        fetch('http://localhost:5000/api/values/1')
+        fetch('http://10.33.132.76/api/values/1')
           .then(response => response.json())
           .then(data => this.setState({ dems: [...this.state.dems, data]}));
       }
 
 
       componentDidMount(){
-        fetch('http://localhost:5000/api/values')
+        fetch('http://10.33.132.76/api/values')
           .then(response => response.json())
           .then(data => this.setState({ dems: data}));
       }

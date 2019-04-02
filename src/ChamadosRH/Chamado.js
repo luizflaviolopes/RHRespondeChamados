@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
-import './css/bootstrap.css';
+import '../css/bootstrap.css';
 
 
 class Chamado extends Component {
