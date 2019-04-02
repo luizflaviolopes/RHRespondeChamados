@@ -18,7 +18,7 @@ class App extends Component {
       <Menu>
         <Botoes label="Relatórios" styleName="btn-menu" />
         <Botoes label="Acompanhamento" styleName="btn-menu" />
-        <Botoes label="Respostas Automaticas" styleName="btn-menu" />
+        <Botoes label="Respostas Automáticas" styleName="btn-menu" />
       </Menu>
       <BrowserRouter>
         <Switch>
