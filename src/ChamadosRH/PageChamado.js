@@ -18,7 +18,6 @@ export class PageChamado extends Component {
     }
 
       render() {
-        
         return(
           <div className="container-app">
             <div className='PageChamados'>
@@ -71,20 +70,17 @@ export class PageChamado extends Component {
                 </p>
               </div>
               <div className="form-group">
-              <div className="row text-center">
-                <div className="col-4">
-                  <Botoes styleName="btn-danger" onClick={this.handleBack} label="Voltar"/>
+                <div className="row text-center">
+                  <div className="col-4">
+                    <Botoes styleName="btn-danger" onClick={this.handleBack} label="Voltar"/>
+                  </div>
+                  <div className="col-4">
+                    <Botoes styleName="btn-primary" label="Redirecionar"/>
+                  </div>
+                  <div className="col-4">
+                    <Botoes styleName="btn-success" label="Responder"/>
+                  </div>
                 </div>
-                <div className="col-4">
-                  <Botoes styleName="btn-primary" label="Redirecionar"/>
-                </div>
-                <div className="col-4">
-                  <Botoes styleName="btn-success" label="Responder"/>
-                </div>
-              </div>
-                
-                
-                
               </div>
             </div>
           </div>
