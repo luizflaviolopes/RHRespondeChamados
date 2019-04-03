@@ -4,9 +4,24 @@
     border-color: #b13732;
     border-radius: 0;
     color: #ffffff;
+    text-align: right;
     
 }
 .btn-l-menu:hover
 {
     font-weight: bold;
+    color: #ffffff;
+    animation-duration: 0.5s;
+    animation-name: animation-menu;
 }
+@keyframes animation-menu {
+    from {
+      
+      width: 110%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
