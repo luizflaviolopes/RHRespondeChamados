@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import '../css/bootstrap.css';
 import Chamado from './Chamado.js';
+import '../css/Chamados.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 /*var demandas = [{numChamado:'1', solicitante:'Renato Tiago Nacimento Oliveira Junio', assunto:'Teste',data:'3/28/2019',status:'Em atendimento',masp: '123654',
@@ -34,7 +37,7 @@ class TabelaIndex extends Component {
         super(props);
         this.state = {dems:null};
         this.BuscarNovo = this.BuscarNovo.bind(this);
-        setTimeout(this.BuscarNovo.bind(this),3000);
+        setTimeout(this.BuscarNovo.bind(this),5000);
       }
 
       BuscarNovo(){
@@ -45,15 +48,20 @@ class TabelaIndex extends Component {
 
 
       componentDidMount(){
+        setTimeout(
+          function(){
         fetch('http://10.33.132.76/api/values')
           .then(response => response.json())
-          .then(data => this.setState({ dems: data}));
+          .then(data => this.setState({ dems: data}))}.bind(this)
+        ,3000);
       }
 
       render() {
         if(this.state.dems == null)
         return(
-        <div>carregando...</div>
+          <div class="carregando">
+            <FontAwesomeIcon icon="spinner" pulse />
+          </div>
         );
         else
         return(

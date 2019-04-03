@@ -41,6 +41,17 @@
     background-color: #9A4642;
 }
 
+.menu-l
+{
+    border-right: 1px solid black;
+    text-align:center;
+    
+}
+.menu-l label
+{
+    font-weight: bold;
+}
+
 .rodape
 {
     position: absolute;

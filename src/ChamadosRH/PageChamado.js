@@ -4,6 +4,7 @@ import '../css/PageChamado.css';
 import Botoes from '../Layout/Botoes.js';
 
 
+
 export class PageChamado extends Component {
     
     constructor(props){
