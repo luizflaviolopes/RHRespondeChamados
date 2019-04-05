@@ -3,7 +3,7 @@ import '../css/bootstrap.css';
 import Chamado from './Chamado.js';
 import '../css/Chamados.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import Table from 'react-bootstrap/Table';
 
 
 /*var demandas = [{numChamado:'1', solicitante:'Renato Tiago Nacimento Oliveira Junio', assunto:'Teste',data:'3/28/2019',status:'Em atendimento',masp: '123654',
@@ -66,7 +66,7 @@ class TabelaIndex extends Component {
         else
         return(
           <div className="container-app">
-            <table className='table table-striped'>
+            <Table striped bordered hover>
               <thead>
                 <tr>
                   <th>
@@ -92,7 +92,7 @@ class TabelaIndex extends Component {
 
                 })}
               </tbody>
-            </table>
+            </Table>
           </div>
         );
     }

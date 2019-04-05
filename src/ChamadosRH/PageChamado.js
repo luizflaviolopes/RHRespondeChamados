@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import '../css/PageChamado.css';
 import Botoes from '../Layout/Botoes.js';
 import {Link} from 'react-router-dom';
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container'
 
 
 
@@ -30,43 +32,43 @@ export class PageChamado extends Component {
                 Chamado {this.state.numChamado}
               </label>
               <div className="form-group">
-                <div className="row">
-                  <div className="col-6">
+                <Row>
+                  <Col sm={6}>
                     <label>Nome: {this.state.solicitante}</label>
-                  </div>
-                  <div className="col-3">
+                  </Col>
+                  <Col sm={3}>
                     <label> CPF: {this.state.cpf}</label>
-                  </div>
-                  <div className="col-3">
+                  </Col>
+                  <Col sm={3}>
                     <label>Masp: {this.state.masp}</label>
-                  </div>
-                </div>
+                  </Col>
+                </Row>
               </div>
               <div className="form-group">
-                <div className="row">
-                  <div className="col-4">
+              <Row>
+                  <Col sm={4}>
                     <label>Celular: {this.state.cel}</label>
-                  </div>
-                  <div className="col-4">
+                  </Col>
+                  <Col sm={4}>
                     <label>E-Mail: {this.state.email}</label>
-                  </div>
-                  <div className="col-4">
+                  </Col>
+                  <Col sm={4}>
                     <label>Status: {this.state.status}</label>
-                  </div>
-                </div>
+                  </Col>
+              </Row>
               </div>
               <div className="form-group">
-                <div className="row">
-                  <div className="col-4">
-                    <label>Assunto: {this.state.assunto}</label>
-                  </div>
-                  <div className="col-4">
-                    <label>Data Abertura: {this.state.data}</label>
-                  </div>
-                  <div className="col-4">
-                    <label>this.state.statu</label>
-                  </div>
-                </div>
+                <Row>
+                    <Col sm={4}>
+                      <label>Assunto: {this.state.assunto}</label>
+                    </Col>
+                    <Col sm={4}>
+                      <label>Data Abertura: {this.state.data}</label>
+                    </Col>
+                    <Col sm={4}>
+                      <label>this.state.statu</label>
+                    </Col>
+                </Row>
               </div>
               <div className="form-group">
                 <label>Descrição:</label>
@@ -75,17 +77,17 @@ export class PageChamado extends Component {
                 </p>
               </div>
               <div className="form-group">
-                <div className="row text-center">
-                  <div className="col-4">
+                <Row className="row text-center">
+                <Col sm={4}>
                   <Link to="/"><Botoes styleName="btn-danger" label="Voltar"/></Link>
-                  </div>
-                  <div className="col-4">
+                  </Col>
+                    <Col sm={4}>
                     <Botoes styleName="btn-primary" label="Redirecionar" data-toggle="modal" data-target/>
-                  </div>
-                  <div className="col-4">
+                    </Col>
+                    <Col sm={4}>
                     <Botoes styleName="btn-success" label="Responder"/>
-                  </div>
-                </div>
+                    </Col>
+                </Row>
               </div>
             </div>
           </div>
