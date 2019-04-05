@@ -2,6 +2,10 @@
 import React, { Component } from 'react';
 import '../css/PageChamado.css';
 import Botoes from '../Layout/Botoes.js';
+import {Link} from 'react-router-dom';
+
+
+
 
 
 
@@ -73,10 +77,10 @@ export class PageChamado extends Component {
               <div className="form-group">
                 <div className="row text-center">
                   <div className="col-4">
-                    <Botoes styleName="btn-danger" onClick={this.handleBack} label="Voltar"/>
+                  <Link to="/"><Botoes styleName="btn-danger" label="Voltar"/></Link>
                   </div>
                   <div className="col-4">
-                    <Botoes styleName="btn-primary" label="Redirecionar"/>
+                    <Botoes styleName="btn-primary" label="Redirecionar" data-toggle="modal" data-target/>
                   </div>
                   <div className="col-4">
                     <Botoes styleName="btn-success" label="Responder"/>
