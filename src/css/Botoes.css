@@ -1,27 +1,35 @@
 .btn-l-menu
 {
-    background-color: #b13732;
-    border-color: #b13732;
+    background-color: #f2f2f2;
+    border-color:#f2f2f2 ;
     border-radius: 0;
-    color: #ffffff;
+    color: #841E19;
     text-align: right;
-    
+    margin:0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .btn-l-menu:hover
 {
     font-weight: bold;
-    color: #ffffff;
+    color: #841E19;
     animation-duration: 0.5s;
     animation-name: animation-menu;
+    width: 110%;
+}
+
+.menu-l .btn-block + .btn-block
+{
+  margin-top: 0; 
 }
 @keyframes animation-menu {
     from {
       
-      width: 110%
+      width: 100%
     }
   
     to {
       margin-left: 0%;
-      width: 100%;
+      width: 110%;
     }
   }
