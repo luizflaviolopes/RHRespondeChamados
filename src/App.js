@@ -28,7 +28,7 @@ class App extends Component {
             <Botoes label="Acompanhamento" styleName="btn-menu" />
             <Botoes label="Respostas Automaticas" styleName="btn-menu" />
         </Menu>
-        <Container>
+        <Container fluid={true}>
           <Row>
             <Col sm={2}>
               <div className="menu-l">
