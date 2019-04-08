@@ -29,49 +29,95 @@ export class PageChamado extends Component {
           <div className="container-app">
             <div className='PageChamados'>
               <label>
-                Chamado {this.state.numChamado}
+                <span>
+                  Chamado: 
+                </span>
+                {this.state.numChamado}
               </label>
               <div className="form-group">
                 <Row>
                   <Col sm={6}>
-                    <label>Nome: {this.state.solicitante}</label>
+                    <label>
+                      <span>
+                        Nome:  
+                      </span>
+                      {this.state.solicitante}</label>
                   </Col>
                   <Col sm={3}>
-                    <label> CPF: {this.state.cpf}</label>
+                    <label>
+                      <span>
+                        CPF: 
+                      </span>
+                        {this.state.cpf}</label>
                   </Col>
                   <Col sm={3}>
-                    <label>Masp: {this.state.masp}</label>
+                    <label>
+                      <span>
+                        Masp: 
+                      </span>
+                      {this.state.masp}</label>
                   </Col>
                 </Row>
               </div>
               <div className="form-group">
               <Row>
                   <Col sm={4}>
-                    <label>Celular: {this.state.cel}</label>
+                    <label>
+                      <span>
+                        Celular:
+                      </span>
+                      {this.state.cel}
+                    </label>
                   </Col>
                   <Col sm={4}>
-                    <label>E-Mail: {this.state.email}</label>
+                    <label>
+                      <span>
+                        E-Mail:
+                      </span>
+                      {this.state.email}
+                    </label>
                   </Col>
                   <Col sm={4}>
-                    <label>Status: {this.state.status}</label>
+                    <label>
+                      <span>
+                      Status: 
+                      </span>
+                      {this.state.status}
+                    </label>
                   </Col>
               </Row>
               </div>
               <div className="form-group">
                 <Row>
                     <Col sm={4}>
-                      <label>Assunto: {this.state.assunto}</label>
+                      <label>
+                        <span>
+                        Assunto: 
+                        </span>
+                        {this.state.assunto}</label>
                     </Col>
                     <Col sm={4}>
-                      <label>Data Abertura: {this.state.data}</label>
+                      <label>
+                        <span>
+                          Data Abertura: 
+                        </span>
+                        {this.state.data}</label>
                     </Col>
                     <Col sm={4}>
-                      <label>this.state.statu</label>
+                      <label>
+                        <span>
+                          this.state.statu
+                          </span>
+                      </label>
                     </Col>
                 </Row>
               </div>
               <div className="form-group">
-                <label>Descrição:</label>
+                <label>
+                  <span>
+                    Descrição:
+                    </span>  
+                </label>
                 <p>
                   {this.state.desc}
                 </p>

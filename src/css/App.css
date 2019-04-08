@@ -1,8 +1,9 @@
 .App {
   text-align: center;
+  min-height: 80vh;
 }
-.container-app
+.allScreen
 {
-  margin-left: 1%;
-  margin-right: 3%;
+  position: relative;
+  min-height: 70vh;
 }

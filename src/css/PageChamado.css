@@ -9,3 +9,7 @@
 {
     text-align: justify;
 }
+.PageChamados label span
+{
+    font-weight: bold;
+}
