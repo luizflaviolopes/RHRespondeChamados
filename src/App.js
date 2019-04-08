@@ -14,7 +14,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 library.add(fas);
@@ -34,58 +34,38 @@ class App extends Component {
           <Row className="allScreen">
             <Col sm={2}>
               <div className="menu-l">
-
                 <SideNav onSelect={(selected) => {/*Add your code here*/}}>
-
                   <SideNav.Toggle />
                   <SideNav.Nav defaultSelected="todos">
                     <NavItem eventKey="todos">
-                      
+                      <NavIcon>
+                        <FontAwesomeIcon icon="folder"/>
+                      </NavIcon>
                       <NavText>
                           Todos
                       </NavText>
                     </NavItem>
-                    <NavItem eventKey="teste0">
+                    <NavItem eventKey="Abertos">
+                    <NavIcon>
+                        <FontAwesomeIcon icon="folder-open"/>
+                      </NavIcon>
                       <NavText>
-                            Teste
+                            Abertos 
                       </NavText>
                     </NavItem>
-                    <NavItem eventKey="teste1">
+                    <NavItem eventKey="Fechados">
+                    <NavIcon>
+                        <FontAwesomeIcon icon="archive"/>
+                    </NavIcon>
                       <NavText>
-                            Teste
+                            Fechados
                       </NavText>
                     </NavItem>
-                    <NavItem eventKey="teste2">
+                    <NavItem eventKey="Setor">
                       <NavText>
-                            Teste
+                            Setor
                       </NavText>
                     </NavItem>
-                    <NavItem eventKey="teste3">
-                      <NavText>
-                            Teste
-                      </NavText>
-                    </NavItem>
-                    <NavItem eventKey="teste4">
-                      <NavText>
-                            Teste
-                      </NavText>
-                    </NavItem>
-                    <NavItem eventKey="teste5">
-                      <NavText>
-                            Teste
-                      </NavText>
-                    </NavItem>
-                    <NavItem eventKey="teste6">
-                      <NavText>
-                            Teste
-                      </NavText>
-                    </NavItem>
-                    <NavItem eventKey="teste7">
-                      <NavText>
-                            Teste
-                      </NavText>
-                    </NavItem>
-
                   </SideNav.Nav>
                 </SideNav>
               </div>
