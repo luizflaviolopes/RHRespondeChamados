@@ -12,6 +12,8 @@ import './css/Botoes.css';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
+import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 
 
@@ -29,17 +31,63 @@ class App extends Component {
             <Botoes label="Respostas Automaticas" styleName="btn-menu" />
         </Menu>
         <Container fluid={true}>
-          <Row>
+          <Row className="allScreen">
             <Col sm={2}>
               <div className="menu-l">
-                <label>Chamados RH</label>
-                <Botoes label="Todos" styleName="btn-l-menu btn-block"/>
-                <Botoes label="Meus Chamados" styleName="btn-l-menu btn-block"/>
-                <Botoes label="Chamatos 'Setor'" styleName="btn-l-menu btn-block"/>
-                <Botoes label="Chamados Fechados" styleName="btn-l-menu btn-block"/>
-                <Botoes label="Abertos" styleName="btn-l-menu btn-block"/>
-                <Botoes label="Em Atendimento" styleName="btn-l-menu btn-block"/>
-                <Botoes label="Pendentes" styleName="btn-l-menu btn-block"/>
+
+                <SideNav onSelect={(selected) => {/*Add your code here*/}}>
+
+                  <SideNav.Toggle />
+                  <SideNav.Nav defaultSelected="todos">
+                    <NavItem eventKey="todos">
+                      
+                      <NavText>
+                          Todos
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="teste0">
+                      <NavText>
+                            Teste
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="teste1">
+                      <NavText>
+                            Teste
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="teste2">
+                      <NavText>
+                            Teste
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="teste3">
+                      <NavText>
+                            Teste
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="teste4">
+                      <NavText>
+                            Teste
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="teste5">
+                      <NavText>
+                            Teste
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="teste6">
+                      <NavText>
+                            Teste
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="teste7">
+                      <NavText>
+                            Teste
+                      </NavText>
+                    </NavItem>
+
+                  </SideNav.Nav>
+                </SideNav>
               </div>
             </Col>
             <Col sm={10}>

@@ -37,7 +37,7 @@ class TabelaIndex extends Component {
         super(props);
         this.state = {dems:null};
         this.BuscarNovo = this.BuscarNovo.bind(this);
-        setTimeout(this.BuscarNovo.bind(this),5000);
+        setTimeout(this.BuscarNovo.bind(this),3000);
       }
 
       BuscarNovo(){
@@ -53,7 +53,7 @@ class TabelaIndex extends Component {
         fetch('http://10.33.132.76/api/values')
           .then(response => response.json())
           .then(data => this.setState({ dems: data}))}.bind(this)
-        ,3000);
+        ,1000);
       }
 
       render() {
@@ -70,20 +70,20 @@ class TabelaIndex extends Component {
               <thead>
                 <tr>
                   <th>
-                    Nº do Chamado
+                    <FontAwesomeIcon icon="hashtag"/>
                   </th>
                   <th>
-                    Solicitante
+                    <FontAwesomeIcon icon="user"/> Solicitante
                   </th>
                   <th>
-                    Assunto 
+                    <FontAwesomeIcon icon="comment-dots" /> Assunto 
                   </th>
                   <th>
-                    Data
+                    <FontAwesomeIcon icon="calendar-day" /> Data
                   </th>
                   <th>
                     Status
-                    </th>
+                  </th>
                 </tr>
               </thead>
               <tbody>
