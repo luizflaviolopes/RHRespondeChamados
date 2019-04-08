@@ -41,7 +41,7 @@ class TabelaIndex extends Component {
       }
 
       BuscarNovo(){
-        fetch('http://10.33.132.76/api/values/1')
+        fetch('http://localhost:5000/api/values') //10.33.132.76
           .then(response => response.json())
           .then(data => this.setState({ dems: [...this.state.dems, data]}));
       }
@@ -50,7 +50,7 @@ class TabelaIndex extends Component {
       componentDidMount(){
         setTimeout(
           function(){
-        fetch('http://10.33.132.76/api/values')
+        fetch('http://localhost:5000/api/values') //10.33.132.76
           .then(response => response.json())
           .then(data => this.setState({ dems: data}))}.bind(this)
         ,1000);
