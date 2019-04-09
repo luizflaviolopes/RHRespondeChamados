@@ -163,9 +163,11 @@ export class PageChamado extends Component {
                             <Form.Label>Descrição:</Form.Label>
                             <Form.Control as="textarea" rows="3" />  
                           </Form.Group>
-                          <Button variant="primary" type="submit">
-                            Transferir
-                          </Button>
+                          <Link to="/">
+                            <Button variant="primary" type="submit">
+                              Transferir
+                            </Button>
+                          </Link>
                         </Form>
 
                       </Modal.Body>
