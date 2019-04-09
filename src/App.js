@@ -42,7 +42,7 @@ class App extends Component {
                         <FontAwesomeIcon icon="folder"/>
                       </NavIcon>
                       <NavText>
-                          Todos
+                        Todos
                       </NavText>
                     </NavItem>
                     <NavItem eventKey="Abertos">
@@ -50,7 +50,7 @@ class App extends Component {
                         <FontAwesomeIcon icon="folder-open"/>
                       </NavIcon>
                       <NavText>
-                            Abertos 
+                        Abertos 
                       </NavText>
                     </NavItem>
                     <NavItem eventKey="Fechados">
@@ -62,8 +62,11 @@ class App extends Component {
                       </NavText>
                     </NavItem>
                     <NavItem eventKey="Setor">
+                      <NavIcon>
+                        <FontAwesomeIcon icon="building"/>
+                      </NavIcon>
                       <NavText>
-                            Setor
+                        Setor
                       </NavText>
                     </NavItem>
                   </SideNav.Nav>

@@ -5,19 +5,22 @@ import Botoes from '../Layout/Botoes.js';
 import {Link} from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container'
-
-
+import Container from 'react-bootstrap/Container';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 
 
 export class PageChamado extends Component {
     
     constructor(props){
-        super(props);      
-    this.state = {...props.location.state}
-    this.handleBack = this.handleBack.bind(this);
-    }
+      super(props);      
+      this.state = {...props.location.state, lgShow:false}
+      this.handleBack = this.handleBack.bind(this);
+    
+  }
+
 
     handleBack()
     {
@@ -25,6 +28,7 @@ export class PageChamado extends Component {
     }
 
       render() {
+        let lgClose = () => this.setState({ lgShow: false });
         return(
           <div className="container-app">
             <div className='PageChamados'>
@@ -127,8 +131,48 @@ export class PageChamado extends Component {
                 <Col sm={4}>
                   <Link to="/"><Botoes styleName="btn-danger" label="Voltar"/></Link>
                   </Col>
-                    <Col sm={4}>
-                    <Botoes styleName="btn-primary" label="Redirecionar" data-toggle="modal" data-target/>
+                  <Col sm={4}>
+                    <Button onClick={() => this.setState({ lgShow: true })}>
+                    Redirecionar
+                    </Button>
+                    
+                    
+                    <Modal size="lg" show={this.state.lgShow} onHide={lgClose} aria-labelledby="example-modal-sizes-title-lg">
+                      <Modal.Header closeButton>
+                        <Modal.Title id="example-modal-sizes-title-lg">
+                          Transferir Chamado {this.state.numChamado}
+                        </Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>
+                        
+                        <Form>
+                          <Form.Row>
+                            <Form.Group as={Col}>
+                              <Form.Label>Transferir para:</Form.Label>
+                              <Form.Control as="select">
+                                <option>Setores</option>
+                                <option>...</option>
+                              </Form.Control>
+                            </Form.Group>
+                            <Form.Group as={Col}>
+                            <Form.Label>Pelo Motivo:</Form.Label>
+                            <Form.Control type="text" placeholder="Motivo"/>
+                            </Form.Group>
+                          </Form.Row>
+                          <Form.Group>
+                            <Form.Label>Descrição:</Form.Label>
+                            <Form.Control as="textarea" rows="3" />  
+                          </Form.Group>
+                          <Button variant="primary" type="submit">
+                            Transferir
+                          </Button>
+                        </Form>
+
+                      </Modal.Body>
+                    </Modal>
+
+
+
                     </Col>
                     <Col sm={4}>
                     <Botoes styleName="btn-success" label="Responder"/>
