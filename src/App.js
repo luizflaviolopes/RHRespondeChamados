@@ -25,7 +25,7 @@ class App extends Component {
             <Route path="/" exact={true} component={TabelaIndex} />
             <Route path="/DetalhamentoChamado" component={PageChamado} />
         </Switch>
-      </ BrowserRouter>
+      </BrowserRouter>
       <Rodape/>
       </div>
     );
