@@ -32,70 +32,71 @@ desc: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsu
 email: 'rhresponde@gov.com.br', cel: '956287083'},]*/
 
 class TabelaIndex extends Component {
-    
-    constructor(props){
-        super(props);
-        this.state = {dems:null};
-        this.BuscarNovo = this.BuscarNovo.bind(this);
-        setTimeout(this.BuscarNovo.bind(this),3000);
-      }
 
-      BuscarNovo(){
-        fetch('http://10.33.132.76/api/values/1') //10.33.132.76
-          .then(response => response.json())
-          .then(data => this.setState({ dems: [...this.state.dems, data]}));
-      }
+  constructor(props) {
+    super(props);
+    this.state = { dems: null };
+    this.BuscarNovo = this.BuscarNovo.bind(this);
+    setTimeout(this.BuscarNovo.bind(this), 3000);
+  }
+
+  BuscarNovo() {
+    fetch('http://10.33.132.76/api/values/1') //10.33.132.76
+      .then(response => response.json())
+      .then(data => this.setState({ dems: [...this.state.dems, data] }));
+  }
 
 
-      componentDidMount(){
-        setTimeout(
-          function(){
+  componentDidMount() {
+    setTimeout(
+      function () {
         fetch('http://10.33.132.76/api/values') //10.33.132.76
           .then(response => response.json())
-          .then(data => this.setState({ dems: data}))}.bind(this)
-        ,1000);
-      }
+          .then(data => this.setState({ dems: data }))
+      }.bind(this)
+      , 1000);
+  }
 
-      render() {
-        if(this.state.dems == null)
-        return(
-          <div class="carregando">
-            <FontAwesomeIcon icon="spinner" pulse />
-          </div>
-        );
-        else
-        return(
-          <div className="container-app">
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>
-                    <FontAwesomeIcon icon="hashtag"/>
-                  </th>
-                  <th>
-                    <FontAwesomeIcon icon="user"/> Solicitante
-                  </th>
-                  <th>
-                    <FontAwesomeIcon icon="comment-dots" /> Assunto 
-                  </th>
-                  <th>
-                    <FontAwesomeIcon icon="calendar-day" /> Data
-                  </th>
-                  <th>
-                    Status
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.dems.map(function(a,i){
-                  return (<Chamado numChamado={a.numChamado} solicitante={a.solicitante} assunto={a.assunto} data={a.data} status={a.status} masp={a.masp} cpf={a.cpf} desc={a.desc} email={a.email} cel={a.cel}/> )
+  render() {
+    if (this.state.dems == null)
+      return (
+        <div class="carregando">
+          <FontAwesomeIcon icon="spinner" pulse />
+        </div>
+      );
+    else
+      return (
+        <div className="container-app">
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>
+                  <FontAwesomeIcon icon="hashtag" />
+                </th>
+                <th>
+                  <FontAwesomeIcon icon="user" /> Solicitante
+                </th>
+                <th>
+                  <FontAwesomeIcon icon="comment-dots" /> Assunto
+                </th>
+                <th>
+                  <FontAwesomeIcon icon="calendar-day" /> Data
+                </th>
+                <th>
+                  Status
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.dems.map(function (a, i) {
+                return (<Chamado numChamado={a.numChamado} solicitante={a.solicitante} assunto={a.assunto} data={a.data} status={a.status} masp={a.masp} cpf={a.cpf} desc={a.desc} email={a.email} cel={a.cel} />)
 
-                })}
-              </tbody>
-            </Table>
-          </div>
-        );
-    }
+              })}
+            </tbody>
+          </Table>
+        </div>
+      );
+  }
 }
 
 
