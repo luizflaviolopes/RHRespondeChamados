@@ -7,7 +7,7 @@ class Chamado extends Component {
 
     constructor(props){
         super(props);
-        this.state = {redirect: false, numChamado: props.numChamado, solicitante: props.solicitante ,assunto:props.assunto,data:props.data, status:props.status};
+        this.state = {redirect: false, numChamado: props.numChamado, solicitante: props.solicitante ,assunto:props.assunto, data:props.data, status:props.status, masp:props.masp, cpf:props.cpf, desc:props.desc, email:props.email, cel:props.cel};
         this.OnclickHande = this.OnclickHande.bind(this);
       }
 
@@ -18,7 +18,7 @@ class Chamado extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to={{pathname: "/Sobre", state: {...this.state}}} />;
+      return <Redirect to={{pathname: "/DetalhamentoChamado", state: {...this.state}}} />;
     }
     return (
       <tr onClick={this.OnclickHande}>
@@ -27,6 +27,7 @@ class Chamado extends Component {
           <td >{this.state.assunto}</td>
           <td >{this.state.data}</td>
           <td >{this.state.status}</td>
+          
       </tr>
     );
   }
