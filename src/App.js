@@ -17,7 +17,6 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fas);
-//funciona
 
 class App extends Component {
 
@@ -51,6 +50,14 @@ class App extends Component {
                       </NavIcon>
                       <NavText>
                         Abertos
+                      </NavText>
+                    </NavItem>
+                    <NavItem eventKey="Pendente">
+                      <NavIcon>
+                        <FontAwesomeIcon icon="folder-minus" />
+                      </NavIcon>
+                      <NavText>
+                        Pendente
                       </NavText>
                     </NavItem>
                     <NavItem eventKey="Fechados">
