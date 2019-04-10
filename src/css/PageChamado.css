@@ -8,4 +8,11 @@
 .PageChamados p
 {
     text-align: justify;
+<<<<<<< HEAD
+=======
+}
+.PageChamados label span
+{
+    font-weight: bold;
+>>>>>>> e3140da91376d9befd95acbaf7244ec8af6df301
 }

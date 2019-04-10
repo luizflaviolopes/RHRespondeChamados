@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
-import './css/bootstrap.css';
+import '../css/bootstrap.css';
 
 
 class Chamado extends Component {
@@ -12,13 +12,16 @@ class Chamado extends Component {
       }
 
       OnclickHande(){
-        console.log('teste na linha de chamado '+ this.state.numChamado);
         this.setState({redirect: true});
       }
 
   render() {
     if (this.state.redirect) {
+<<<<<<< HEAD:src/Chamado.js
       return <Redirect to={{pathname: "/DetalhamentoChamado", state: {...this.state}}} />;
+=======
+      return <Redirect push to={{pathname: "/DetalhamentoChamado", state: {...this.state}}} />;
+>>>>>>> e3140da91376d9befd95acbaf7244ec8af6df301:src/ChamadosRH/Chamado.js
     }
     return (
       <tr onClick={this.OnclickHande}>

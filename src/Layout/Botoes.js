@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './css/bootstrap.css';
+import '../css/bootstrap.css';
 
 
 class Botoes extends Component

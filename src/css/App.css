@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  min-height: 80vh;
+}
+.allScreen
+{
+  position: relative;
+  min-height: 70vh;
+}
