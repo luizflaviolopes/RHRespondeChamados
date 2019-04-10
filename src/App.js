@@ -15,9 +15,9 @@ import Row from 'react-bootstrap/Row';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {PageChamado} from './PageChamado.js';
+import Botoes from './Botoes.js';
 
-
-library.add(fas);
 
 class App extends Component {
 
