@@ -12,7 +12,7 @@ import './css/Botoes.css';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

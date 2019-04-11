@@ -60,7 +60,7 @@ class TabelaIndex extends Component {
   render() {
     if (this.state.dems == null)
       return (
-        <div class="carregando">
+        <div className="carregando">
           <FontAwesomeIcon icon="spinner" pulse />
         </div>
       );
@@ -95,7 +95,7 @@ class TabelaIndex extends Component {
             </tbody>
           </Table>
         </div>
-      );
+      )
   }
 }
 
