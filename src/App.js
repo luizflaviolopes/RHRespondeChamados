@@ -12,9 +12,8 @@ import './css/Botoes.css';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
-import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SideMenuIndex from './SideMenuIndex.js';
 
 library.add(fas);
 
@@ -23,6 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="body">
+      <BrowserRouter>
         <Cabecalho />
         <Menu>
           <Botoes label="Relatórios" styleName="btn-menu" />
@@ -33,64 +33,26 @@ class App extends Component {
           <Row className="allScreen">
             <Col sm={2}>
               <div className="menu-l">
-                <SideNav onSelect={(selected) => {/*Add your code here*/ }}>
-                  <SideNav.Toggle />
-                  <SideNav.Nav defaultSelected="todos">
-                    <NavItem eventKey="todos">
-                      <NavIcon>
-                        <FontAwesomeIcon icon="folder" />
-                      </NavIcon>
-                      <NavText>
-                        Todos
-                      </NavText>
-                    </NavItem>
-                    <NavItem eventKey="Abertos">
-                      <NavIcon>
-                        <FontAwesomeIcon icon="folder-open" />
-                      </NavIcon>
-                      <NavText>
-                        Abertos
-                      </NavText>
-                    </NavItem>
-                    <NavItem eventKey="Pendente">
-                      <NavIcon>
-                        <FontAwesomeIcon icon="folder-minus" />
-                      </NavIcon>
-                      <NavText>
-                        Pendente
-                      </NavText>
-                    </NavItem>
-                    <NavItem eventKey="Fechados">
-                      <NavIcon>
-                        <FontAwesomeIcon icon="archive" />
-                      </NavIcon>
-                      <NavText>
-                        Fechados
-                      </NavText>
-                    </NavItem>
-                    <NavItem eventKey="Setor">
-                      <NavIcon>
-                        <FontAwesomeIcon icon="building" />
-                      </NavIcon>
-                      <NavText>
-                        Setor
-                      </NavText>
-                    </NavItem>
-                  </SideNav.Nav>
-                </SideNav>
+              <Switch>
+                  <Route path="/" exact={true} component={SideMenuIndex} />
+                  <Route path="/Chamados"  component={SideMenuIndex} />
+                </Switch>
               </div>
             </Col>
             <Col sm={10}>
-              <BrowserRouter>
+              
                 <Switch>
                   <Route path="/" exact={true} component={TabelaIndex} />
+                  <Route path="/Chamados/:tipo"  component={TabelaIndex} />
                   <Route path="/DetalhamentoChamado" component={PageChamado} />
                 </Switch>
-              </BrowserRouter>
+              
             </Col>
           </Row>
         </Container>
+        </BrowserRouter>
         <Rodape />
+        
       </div>
     );
   }
