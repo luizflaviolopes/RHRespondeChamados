@@ -106,13 +106,6 @@ export class PageChamado extends Component {
                         </span>
                   {this.state.data}</label>
               </Col>
-              <Col sm={4}>
-                <label>
-                  <span>
-                    this.state.statu
-                          </span>
-                </label>
-              </Col>
             </Row>
           </div>
           <div className="form-group">
@@ -219,7 +212,7 @@ export class PageChamado extends Component {
               </Col>
               <Col sm={3}>
                 <Button variant="secondary" onClick={() => this.setState({ historyModal: true })}>
-                  Historico
+                  Histórico
                 </Button>
 
               </Col>

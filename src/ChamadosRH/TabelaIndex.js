@@ -6,42 +6,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Table from 'react-bootstrap/Table';
 
 
-/*var demandas = [{numChamado:'1', solicitante:'Renato Tiago Nacimento Oliveira Junio', assunto:'Teste',data:'3/28/2019',status:'Em atendimento',masp: '123654',
-cpf:'12365412332',
-desc: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-email: 'rhresponde@gov.com.br', cel: '956287083'},
-{numChamado:'2', solicitante:'Luiz Flavio', assunto:'Teste',data:'3/28/2019',status:'Em atendimento',masp: '123654',
-cpf:'12365412332',
-desc: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-email: 'rhresponde@gov.com.br', cel: '956287083'},
-{numChamado:'3', solicitante:'Drew Barbosa', assunto:'Teste',data:'3/28/2019',status:'Em atendimento',masp: '123654',
-cpf:'12365412332',
-desc: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-email: 'rhresponde@gov.com.br', cel: '956287083'},
-{numChamado:'4', solicitante:'Claudio Alex ', assunto:'Teste',data:'3/28/2019',status:'Em atendimento',masp: '123654',
-cpf:'12365412332',
-desc: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-email: 'rhresponde@gov.com.br', cel: '956287083'},
-{numChamado:'5', solicitante:'Michel Dassan ', assunto:'Teste',data:'3/28/2019',status:'Em atendimento',masp: '123654',
-cpf:'12365412332',
-desc: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-email: 'rhresponde@gov.com.br', cel: '956287083'},
-{numChamado:'6', solicitante:'Andre Thor', assunto:'Teste',data:'3/28/2019',status:'Em atendimento',masp: '123654',
-cpf:'12365412332',
-desc: 'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-email: 'rhresponde@gov.com.br', cel: '956287083'},]*/
-
 class TabelaIndex extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { dems: null };
+    this.state = { dems: null, tipo: "" };
     this.BuscarNovo = this.BuscarNovo.bind(this);
+    this.state.tipo = this.props.match.params.tipo;
     setTimeout(this.BuscarNovo.bind(this), 3000);
+    this.BuscarDados = this.BuscarDados.bind(this);
   }
 
+componentWillReceiveProps(nextProps){
+ if(nextProps.match.params.tipo != this.props.match.params.tipo){
+  fetch('http://localhost:5000/api/values?tipo=' + nextProps.match.params.tipo) 
+  .then(response => response.json())
+  .then(data => this.setState({ dems: data }))
+   }
+}
+
   BuscarNovo() {
-    fetch('http://localhost:5000/api/values') //10.33.132.76
+    fetch('http://localhost:5000/api/values') 
       .then(response => response.json())
       .then(data => this.setState({ dems: [...this.state.dems, data] }));
   }
@@ -50,11 +35,19 @@ class TabelaIndex extends Component {
   componentDidMount() {
     setTimeout(
       function () {
-        fetch('http://localhost:5000/api/values') //10.33.132.76
+        fetch('http://localhost:5000/api/values?tipo=' + this.state.tipo) 
           .then(response => response.json())
           .then(data => this.setState({ dems: data }))
       }.bind(this)
       , 1000);
+  }
+
+  BuscarDados(){
+
+      fetch('http://localhost:5000/api/values?tipo=' + this.state.tipo) 
+        .then(response => response.json())
+        .then(data => this.setState({ dems: data }))
+
   }
 
   render() {
