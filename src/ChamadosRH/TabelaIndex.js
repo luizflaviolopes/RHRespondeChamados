@@ -10,11 +10,8 @@ class TabelaIndex extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { dems: null, tipo: "" };
-    this.BuscarNovo = this.BuscarNovo.bind(this);
+    this.state = { dems: null, tipo: "" };  
     this.state.tipo = this.props.match.params.tipo;
-    setTimeout(this.BuscarNovo.bind(this), 3000);
-    this.BuscarDados = this.BuscarDados.bind(this);
   }
 
 componentWillReceiveProps(nextProps){
@@ -23,6 +20,7 @@ componentWillReceiveProps(nextProps){
   .then(response => response.json())
   .then(data => this.setState({ dems: data }))
    }
+   
 }
 
   BuscarNovo() {
@@ -39,16 +37,9 @@ componentWillReceiveProps(nextProps){
           .then(response => response.json())
           .then(data => this.setState({ dems: data }))
       }.bind(this)
-      , 1000);
+    );
   }
 
-  BuscarDados(){
-
-      fetch('http://localhost:5000/api/values?tipo=' + this.state.tipo) 
-        .then(response => response.json())
-        .then(data => this.setState({ dems: data }))
-
-  }
 
   render() {
     if (this.state.dems == null)
