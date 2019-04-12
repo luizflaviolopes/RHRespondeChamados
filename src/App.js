@@ -31,7 +31,7 @@ class App extends Component {
         </Menu>
         <Container fluid={true}>
           <Row className="allScreen">
-            <Col sm={2}>
+            <Col lg={1}>
               <div className="menu-l">
               <Switch>
                   <Route path="/" exact={true} component={SideMenuIndex} />
@@ -39,7 +39,7 @@ class App extends Component {
                 </Switch>
               </div>
             </Col>
-            <Col sm={10}>
+            <Col lg={10}>
               
                 <Switch>
                   <Route path="/" exact={true} component={TabelaIndex} />
