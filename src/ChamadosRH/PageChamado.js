@@ -5,7 +5,6 @@ import Botoes from '../Layout/Botoes.js';
 import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -105,13 +104,6 @@ export class PageChamado extends Component {
                     Data Abertura:
                         </span>
                   {this.state.data}</label>
-              </Col>
-              <Col sm={4}>
-                <label>
-                  <span>
-                    this.state.statu
-                          </span>
-                </label>
               </Col>
             </Row>
           </div>
@@ -219,7 +211,7 @@ export class PageChamado extends Component {
               </Col>
               <Col sm={3}>
                 <Button variant="secondary" onClick={() => this.setState({ historyModal: true })}>
-                  Historico
+                  Histórico
                 </Button>
 
               </Col>

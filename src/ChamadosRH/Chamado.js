@@ -10,7 +10,9 @@ class Chamado extends Component {
     this.state = { redirect: false, numChamado: props.numChamado, solicitante: props.solicitante, assunto: props.assunto, data: props.data, status: props.status, masp: props.masp, cpf: props.cpf, desc: props.desc, email: props.email, cel: props.cel };
     this.OnclickHande = this.OnclickHande.bind(this);
   }
-
+  componentWillReceiveProps(nextProps){
+    this.setState({numChamado: nextProps.numChamado, solicitante: nextProps.solicitante, assunto: nextProps.assunto, data: nextProps.data, status: nextProps.status, masp: nextProps.masp, cpf: nextProps.cpf, desc: nextProps.desc, email: nextProps.email, cel: nextProps.cel})
+  }
   OnclickHande() {
     this.setState({ redirect: true });
   }
