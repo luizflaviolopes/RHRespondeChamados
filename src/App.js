@@ -17,7 +17,6 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fas);
-//funciona
 
 class App extends Component {
 
