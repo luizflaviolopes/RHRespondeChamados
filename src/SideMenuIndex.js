@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import './css/bootstrap.css';
 import './css/Botoes.css';
-import { BrowserRouter, Switch, Route, Router } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Router } from 'react-router-dom';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
