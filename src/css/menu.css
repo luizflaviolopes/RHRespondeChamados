@@ -60,14 +60,13 @@
 
 .rodape
 {
-    position: absolute;
-    bottom: 0;
+
     width: 100%;
     background-color: #841E19;  
     color: #000000;
     padding: 2%;
     color: #FFF;
-    margin-top: 10px;
+
 
 }
 .rodape nav

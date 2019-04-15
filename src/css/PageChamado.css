@@ -3,15 +3,18 @@
     box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     border-radius: 5px;
     padding: 10px;
+    margin-left:15px; 
 }
 
 .PageChamados p
 {
     text-align: justify;
+    padding: 15px;
 }
 .PageChamados label span
 {
     font-weight: bold;
+    margin-right: 2px;
 }
 .sizeModalLG
 {

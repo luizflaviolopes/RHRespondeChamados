@@ -22,37 +22,34 @@ class App extends Component {
   render() {
     return (
       <div className="body">
-      <BrowserRouter>
-        <Cabecalho />
-        <Menu>
-          <Botoes label="Relatórios" styleName="btn-menu" />
-          <Botoes label="Acompanhamento" styleName="btn-menu" />
-          <Botoes label="Respostas Automaticas" styleName="btn-menu" />
-        </Menu>
-        <Container fluid={true}>
-          <Row className="allScreen">
-            <Col lg={1}>
+        <BrowserRouter>
+          <Cabecalho />
+          <Menu>
+            <Botoes label="Relatórios" styleName="btn-menu" />
+            <Botoes label="Acompanhamento" styleName="btn-menu" />
+            <Botoes label="Respostas Automaticas" styleName="btn-menu" />
+          </Menu>
+          <Container fluid={true} className="position-relative">
+
+            <div className="allScreen">
               <div className="menu-l">
-              <Switch>
+                <Switch>
                   <Route path="/" exact={true} component={SideMenuIndex} />
-                  <Route path="/Chamados"  component={SideMenuIndex} />
+                  <Route path="/Chamados" component={SideMenuIndex} />
                 </Switch>
               </div>
-            </Col>
-            <Col lg={10}>
-              
-                <Switch>
-                  <Route path="/" exact={true} component={TabelaIndex} />
-                  <Route path="/Chamados/:tipo"  component={TabelaIndex} />
-                  <Route path="/DetalhamentoChamado" component={PageChamado} />
-                </Switch>
-              
-            </Col>
-          </Row>
-        </Container>
+              <Switch>
+                <Route path="/" exact={true} component={TabelaIndex} />
+                <Route path="/Chamados/:tipo" component={TabelaIndex} />
+                <Route path="/DetalhamentoChamado" component={PageChamado} />
+              </Switch>
+            </div>
+
+
+          </Container>
         </BrowserRouter>
         <Rodape />
-        
+
       </div>
     );
   }
