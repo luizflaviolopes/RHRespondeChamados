@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export class PageChamado extends Component {
   constructor(props) {
@@ -109,7 +110,9 @@ export class PageChamado extends Component {
           <Row className="row text-center">
             <Col sm={3}>
               <Link to="/">
-                <Botoes styleName="btn-danger" label="Voltar" />
+                <Button variant="danger">
+                  <FontAwesomeIcon icon="chevron-circle-left" />  Voltar
+                </Button>
               </Link>
             </Col>
             <Col sm={3}>
@@ -117,7 +120,7 @@ export class PageChamado extends Component {
                 variant="primary"
                 onClick={() => this.setState({ transferModal: true })}
               >
-                Redirecionar
+                <FontAwesomeIcon icon="exchange-alt" /> Redirecionar
               </Button>
 
               <Modal
@@ -164,7 +167,7 @@ export class PageChamado extends Component {
                 variant="success"
                 onClick={() => this.setState({ answerModal: true })}
               >
-                Responder
+                <FontAwesomeIcon icon="file-alt" />  Responder
               </Button>
 
               <Modal
@@ -172,41 +175,54 @@ export class PageChamado extends Component {
                 show={this.state.answerModal}
                 onHide={lgClose}
                 dialogClassName="sizeModalLG"
-                aria-labelledby="example-modal-sizes-title-lg"
+                aria-labelledby="Respostas-Chamados"
               >
                 <Modal.Header closeButton>
-                  <Modal.Title id="example-modal-sizes-title-lg">
+                  <Modal.Title id="Respostas-Chamados">
                     Resposta ao Chamado {this.state.numChamado}
                   </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                   <Form>
                     <Form.Group>
+
+
                       {["radio"].map(type => (
-                        <div key={`inline-${type}`} className="mb-3">
-                          <Form.Check
-                            label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat nibh risus, non suscipit dui accumsan vel. Mauris dignissim quis velit vitae vulputate. Donec vehicula sollicitudin quam, nec tempor sem tincidunt eget. Phasellus porta elit elit, at gravida purus convallis eget. Proin in dapibus justo. Integer non orci eu leo tristique malesuada eu sed nulla. Fusce est dui, rutrum pretium sem in, molestie ullamcorper mauris. Pellentesque lobortis velit vitae nulla placerat sagittis. Nullam nulla lectus, efficitur condimentum metus eu, tempor luctus dui. Sed nec ligula nec orci finibus cursus sollicitudin ac sapien. Suspendisse in dui mattis, lobortis sem et, pulvinar augue. Donec viverra nulla vitae iaculis mattis. Phasellus sagittis, ante nec varius ultricies, nisl ante molestie turpis, in commodo erat quam nec erat. Aliquam nec scelerisque nulla. Pellentesque quis varius est, eu sollicitudin nisl. Nam finibus eros vitae dignissim aliquam."
-                            type={type}
-                            id={`inline-${type}-1`}
-                          />
-                          <Form.Check
-                            label="2"
-                            type={type}
-                            id={`inline-${type}-2`}
-                          />
-                          <Form.Check
-                            inline
-                            disabled
-                            label="bla (disabled)"
-                            type={type}
-                            id={`inline-${type}-3`}
-                          />
+                        <div key={`inline-${type}`} className="mb-3 text-justify">
+                          <div className="checkChamado">
+                            <Form.Check
+                              name="resposta"
+                              label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat nibh risus, non suscipit dui accumsan vel. Mauris dignissim quis velit vitae vulputate. Donec vehicula sollicitudin quam, nec tempor sem tincidunt eget. Phasellus porta elit elit, at gravida purus convallis eget. Proin in dapibus justo. Integer non orci eu leo tristique malesuada eu sed nulla. Fusce est dui, rutrum pretium sem in, molestie ullamcorper mauris. Pellentesque lobortis velit vitae nulla placerat sagittis. Nullam nulla lectus, efficitur condimentum metus eu, tempor luctus dui. Sed nec ligula nec orci finibus cursus sollicitudin ac sapien. Suspendisse in dui mattis, lobortis sem et, pulvinar augue. Donec viverra nulla vitae iaculis mattis. Phasellus sagittis, ante nec varius ultricies, nisl ante molestie turpis, in commodo erat quam nec erat. Aliquam nec scelerisque nulla. Pellentesque quis varius est, eu sollicitudin nisl. Nam finibus eros vitae dignissim aliquam."
+                              type={type}
+                              id={`inline-${type}-1`}
+                            />
+                          </div>
+                          <div className="checkChamado">
+                            <Form.Check
+                              name="resposta"
+                              label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat nibh risus, non suscipit dui accumsan vel. Mauris dignissim quis velit vitae vulputate. Donec vehicula sollicitudin quam, nec tempor sem tincidunt eget. Phasellus porta elit elit, at gravida purus convallis eget. Proin in dapibus justo. Integer non orci eu leo tristique malesuada eu sed nulla. Fusce est dui, rutrum pretium sem in, molestie ullamcorper mauris. Pellentesque lobortis velit vitae nulla placerat sagittis. Nullam nulla lectus, efficitur condimentum metus eu, tempor luctus dui. Sed nec ligula nec orci finibus cursus sollicitudin ac sapien. Suspendisse in dui mattis, lobortis sem et, pulvinar augue. Donec viverra nulla vitae iaculis mattis. Phasellus sagittis, ante nec varius ultricies, nisl ante molestie turpis, in commodo erat quam nec erat. Aliquam nec scelerisque nulla. Pellentesque quis varius est, eu sollicitudin nisl. Nam finibus eros vitae dignissim aliquam."
+                              type={type}
+                              id={`inline-${type}-2`}
+                            />
+                          </div>
+                          <div className="checkChamado">
+                            <Form.Check
+                              name="resposta"
+                              label="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus feugiat nibh risus, non suscipit dui accumsan vel. Mauris dignissim quis velit vitae vulputate. Donec vehicula sollicitudin quam, nec tempor sem tincidunt eget. Phasellus porta elit elit, at gravida purus convallis eget. Proin in dapibus justo. Integer non orci eu leo tristique malesuada eu sed nulla. Fusce est dui, rutrum pretium sem in, molestie ullamcorper mauris. Pellentesque lobortis velit vitae nulla placerat sagittis. Nullam nulla lectus, efficitur condimentum metus eu, tempor luctus dui. Sed nec ligula nec orci finibus cursus sollicitudin ac sapien. Suspendisse in dui mattis, lobortis sem et, pulvinar augue. Donec viverra nulla vitae iaculis mattis. Phasellus sagittis, ante nec varius ultricies, nisl ante molestie turpis, in commodo erat quam nec erat. Aliquam nec scelerisque nulla. Pellentesque quis varius est, eu sollicitudin nisl. Nam finibus eros vitae dignissim aliquam."
+                              type={type}
+                              id={`inline-${type}-3`}
+                            />
+                          </div>
                         </div>
                       ))}
                     </Form.Group>
-
+                    <hr />
+                    <Form.Group>
+                      <Form.Label>Resposta:</Form.Label>
+                      <Form.Control as="textarea" rows="3" />
+                    </Form.Group>
                     <Link to="/">
-                      <Button variant="primary" type="submit">
+                      <Button variant="success" type="submit">
                         Responder
                       </Button>
                     </Link>
@@ -219,7 +235,7 @@ export class PageChamado extends Component {
                 variant="secondary"
                 onClick={() => this.setState({ historyModal: true })}
               >
-                Histórico
+                <FontAwesomeIcon icon="history" /> Histórico
               </Button>
             </Col>
           </Row>

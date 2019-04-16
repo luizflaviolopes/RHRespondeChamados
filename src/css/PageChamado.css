@@ -21,3 +21,16 @@
     width: 70%;
     max-width: none!important;
 }
+
+.checkChamado
+{
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #fff1f1;
+    margin-bottom: 3px;
+}
+
+div.container-app > table > tbody > tr
+{
+    cursor: pointer;
+}
