@@ -111,7 +111,7 @@ export class PageChamado extends Component {
             <Col sm={3}>
               <Link to="/">
                 <Button variant="danger">
-                  <FontAwesomeIcon icon="chevron-circle-left" />  Voltar
+                  <FontAwesomeIcon icon="chevron-circle-left" /> Voltar
                 </Button>
               </Link>
             </Col>
@@ -145,8 +145,11 @@ export class PageChamado extends Component {
                         </Form.Control>
                       </Form.Group>
                       <Form.Group as={Col}>
-                        <Form.Label>Pelo Motivo:</Form.Label>
-                        <Form.Control type="text" placeholder="Motivo" />
+                        <Form.Label>Prioridade:</Form.Label>
+                        <Form.Control as="select">
+                          <option>Prioridade</option>
+                          <option>...</option>
+                        </Form.Control>
                       </Form.Group>
                     </Form.Row>
                     <Form.Group>
@@ -167,7 +170,7 @@ export class PageChamado extends Component {
                 variant="success"
                 onClick={() => this.setState({ answerModal: true })}
               >
-                <FontAwesomeIcon icon="file-alt" />  Responder
+                <FontAwesomeIcon icon="file-alt" /> Responder
               </Button>
 
               <Modal
@@ -185,10 +188,11 @@ export class PageChamado extends Component {
                 <Modal.Body>
                   <Form>
                     <Form.Group>
-
-
                       {["radio"].map(type => (
-                        <div key={`inline-${type}`} className="mb-3 text-justify">
+                        <div
+                          key={`inline-${type}`}
+                          className="mb-3 text-justify"
+                        >
                           <div className="checkChamado">
                             <Form.Check
                               name="resposta"

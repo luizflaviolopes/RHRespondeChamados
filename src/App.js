@@ -23,11 +23,7 @@ class App extends Component {
       <div className="body">
         <BrowserRouter>
           <Cabecalho />
-          <Menu>
-            <Botoes label="Relatórios" styleName="btn-menu" />
-            <Botoes label="Acompanhamento" styleName="btn-menu" />
-            <Botoes label="Respostas Automaticas" styleName="btn-menu" />
-          </Menu>
+          <Menu />
           <Container fluid={true} className="position-relative">
             <div className="allScreen">
               <div className="menu-l">
