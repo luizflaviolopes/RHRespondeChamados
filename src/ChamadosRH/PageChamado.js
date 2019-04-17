@@ -18,13 +18,17 @@ export class PageChamado extends Component {
       transferModal: false,
       answerModal: false,
       historyModal: false,
-      answerTeste: false
+      answerOpen: false
     };
     this.handleBack = this.handleBack.bind(this);
-   
+    this.handleAnswer = this.handleAnswer.bind(this);
   }
 
-  
+  handleAnswer()
+  {
+      this.setState({answerOpen: !this.state.answerOpen})
+  }
+
   handleBack() {
     this.props.history.goBack();
   }
@@ -175,7 +179,7 @@ export class PageChamado extends Component {
             <Col sm={3}>
               <Button
                 variant="success"
-                onClick={() => this.setState({answerTeste: true})}
+                onClick={this.handleAnswer}
               >
                 <FontAwesomeIcon icon="file-alt" /> Responder
               </Button>
@@ -190,8 +194,8 @@ export class PageChamado extends Component {
             </Col>
           </Row>
         </div>
-        {this.state.answerTeste ?
-        <Respostas/> :
+        {this.state.answerOpen ?
+        <Respostas closeAnswer={this.handleAnswer}/> :
         null}
                      
         

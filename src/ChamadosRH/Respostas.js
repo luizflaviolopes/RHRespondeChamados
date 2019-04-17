@@ -8,6 +8,10 @@ import Container from "react-bootstrap/Container";
 import "../css/Respostas.css"
 
 export class Respostas extends Component {
+    constructor(props){
+        super(props);
+        this.state = { }
+    }
     render() {
         return (
             <div className="respostas">
@@ -53,6 +57,10 @@ export class Respostas extends Component {
                             <Button variant="success" type="submit">
                                 Enviar Resposta
                             </Button>
+                            <Button variant="danger" onClick={() => this.props.closeAnswer()}>
+                                Cancelar
+                            </Button>
+                            
                         </Form.Group>
                     </Form>
 
