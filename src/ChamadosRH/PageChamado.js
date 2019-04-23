@@ -8,7 +8,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {Respostas} from "./Respostas.js";
+import { Respostas } from "./Respostas.js";
 
 export class PageChamado extends Component {
   constructor(props) {
@@ -24,9 +24,8 @@ export class PageChamado extends Component {
     this.handleAnswer = this.handleAnswer.bind(this);
   }
 
-  handleAnswer()
-  {
-      this.setState({answerOpen: !this.state.answerOpen})
+  handleAnswer() {
+    this.setState({ answerOpen: !this.state.answerOpen });
   }
 
   handleBack() {
@@ -40,8 +39,6 @@ export class PageChamado extends Component {
         answerModal: false,
         historyModal: false
       });
-
-    
 
     return (
       <div className="PageChamados">
@@ -177,10 +174,7 @@ export class PageChamado extends Component {
               </Modal>
             </Col>
             <Col sm={3}>
-              <Button
-                variant="success"
-                onClick={this.handleAnswer}
-              >
+              <Button variant="success" onClick={this.handleAnswer}>
                 <FontAwesomeIcon icon="file-alt" /> Responder
               </Button>
             </Col>
@@ -194,11 +188,9 @@ export class PageChamado extends Component {
             </Col>
           </Row>
         </div>
-        {this.state.answerOpen ?
-        <Respostas closeAnswer={this.handleAnswer}/> :
-        null}
-                     
-        
+        {this.state.answerOpen ? (
+          <Respostas closeAnswer={this.handleAnswer} />
+        ) : null}
       </div>
     );
   }
