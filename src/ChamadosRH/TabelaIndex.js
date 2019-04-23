@@ -20,7 +20,10 @@ class TabelaIndex extends Component {
     var checkFilter = function(element) {
       let retorno = true;
       Object.keys(newFilter).every(function(p, i) {
-        if (newFilter[p] != "" && !element[p].includes(newFilter[p])) {
+        if (
+          newFilter[p] != "" &&
+          !element[p].toLowerCase().includes(newFilter[p])
+        ) {
           retorno = false;
           return false;
         }

@@ -23,7 +23,7 @@ class Cabecalho extends Component {
               onChange={event =>
                 this.props.onFilter({
                   propertie: this.props.FilterParam,
-                  value: event.target.value
+                  value: event.target.value.toLowerCase()
                 })
               }
             />
