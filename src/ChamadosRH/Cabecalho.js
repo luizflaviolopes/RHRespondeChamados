@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
 import "../css/bootstrap.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -14,15 +13,17 @@ class Cabecalho extends Component {
 
     render() {
         return (
-            <div>
-                <div className="float-left d-inline">
+            <div className="">
+                <div className="float-left">
                     <FontAwesomeIcon icon={this.props.icone} /> {this.props.label}
                 </div>
                 {
                     this.state.isFiltering ?
-                        <input onChange={(event)=> this.props.onFilter({propertie: this.props.FilterParam, value:event.target.value})}></input>
+                        <div className="">
+                            <input className="form-control float-right"  onChange={(event)=> this.props.onFilter({propertie: this.props.FilterParam, value:event.target.value})}></input>
+                        </div>
                         :
-                        <div className="float-right d-inline">
+                        <div className="float-right">
                             <FontAwesomeIcon icon="filter" onClick={()=>this.setState({isFiltering:true})} />
                         </div>
                 }

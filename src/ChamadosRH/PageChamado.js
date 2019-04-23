@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../css/PageChamado.css";
-import Botoes from "../Layout/Botoes.js";
+
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

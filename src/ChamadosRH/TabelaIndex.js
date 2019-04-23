@@ -95,40 +95,19 @@ class TabelaIndex extends Component {
             <thead>
               <tr>
                 <th>
-                  <div>
-                    <div className="float-left d-inline">
-                      <FontAwesomeIcon icon="hashtag" />
-                    </div>
-                    <div className="float-right d-inline">
-                      <FontAwesomeIcon icon="filter" />
-                    </div>
-                  </div>
+                  <Cabecalho label="Nº Chamado" icone="hashtag" FilterParam="numChamado" sizeInput="w-25" onFilter={this.handleFiltering}/>
                 </th>
                 <th>
-                  <div>
-                    <div className="float-left d-inline">
-                      <FontAwesomeIcon icon="user"/> Solicitante
-                    </div>
-                    <div className="float-right d-inline">
-                      <FontAwesomeIcon icon="filter" />
-                    </div>
-                  </div>
+                  <Cabecalho label="Solicitante" icone="user" FilterParam="solicitante" sizeInput="w-75" onFilter={this.handleFiltering}/>
                 </th>
                 <th>
-                  <div>
-                    <div className="float-left d-inline">
-                      <FontAwesomeIcon icon="comment-dots" /> Assunto
-                    </div>
-                    <div className="float-right d-inline">
-                      <FontAwesomeIcon icon="filter" />
-                    </div>
-                  </div>
+                  <Cabecalho label="Assunto" icone="comment-dots" FilterParam="assunto" sizeInput="w-75" onFilter={this.handleFiltering}/>                  
                 </th>
                 <th>
-                  <Cabecalho label="Data" icone="calendar-day" FilterParam="data" onFilter={this.handleFiltering}/>
+                  <Cabecalho label="Data" icone="calendar-day" FilterParam="data" sizeInput="w-50" onFilter={this.handleFiltering}/>
                 </th>
                 <th>
-                  <Cabecalho label="Status" icone="" FilterParam="status" onFilter={this.handleFiltering}/>
+                  <Cabecalho label="Status" icone="" FilterParam="status" sizeInput="w-50" onFilter={this.handleFiltering}/>
                 </th>
               </tr>
             </thead>
