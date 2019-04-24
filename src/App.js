@@ -15,19 +15,22 @@ import SideMenuIndex from "./SideMenuIndex.js";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import Formulario from "./ChamadosRH/Formulario.js";
 
 library.add(fas);
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { answerModal: false };
+    this.state = { answerModal: false,
+                   newCallModal: false };
   }
 
   render() {
     let lgClose = () =>
       this.setState({
-        answerModal: false
+        answerModal: false,
+        newCallModal:false
       });
 
     return (
@@ -99,6 +102,31 @@ class App extends Component {
                 </Form>
               </Modal.Body>
             </Modal>
+
+            <Button
+              className="btn-menu"
+              onClick={() => this.setState({ newCallModal: true })}
+              >
+              Novo Chamado
+            </Button>
+            <Modal
+              size="lg"
+              show={this.state.newCallModal}
+              onHide={lgClose}
+              dialogClassName="sizeModalLG"
+              aria-labelledby="Respostas-Chamados"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title id="Respostas-Chamados">
+                  Novo Chamado 
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Formulario/>
+              </Modal.Body>
+            </Modal>
+            
+
           </Menu>
           <Container fluid={true} className="position-relative">
             <div className="allScreen">

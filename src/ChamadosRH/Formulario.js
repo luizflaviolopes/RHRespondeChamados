@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import "../css/bootstrap.css";
 import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
+import "../css/Botoes.css";
 
 export class Formulario extends Component {
   render() {
     return (
       <div>
         <Form>
-          <Form.Group>
-            <Form.Label>Abertura de Chamado</Form.Label>
-          </Form.Group>
           <Form.Group as={Row}>
             <Col sm="6">
               <Form.Label>MASP</Form.Label>
@@ -44,8 +45,14 @@ export class Formulario extends Component {
               <Form.Control type="text" placeholder="Digite o E-mail" />
             </Col>
           </Form.Group>
+          <Form.Group>
+            <Button className="btn-menu">
+              Criar
+            </Button>
+          </Form.Group>
         </Form>
       </div>
     );
   }
 }
+export default Formulario;
