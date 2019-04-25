@@ -22,6 +22,7 @@ export class PageChamado extends Component {
     };
     this.handleBack = this.handleBack.bind(this);
     this.handleAnswer = this.handleAnswer.bind(this);
+    this.handleTransferencia = this.handleTransferencia.bind(this);
   }
 
   handleAnswer() {
@@ -30,6 +31,14 @@ export class PageChamado extends Component {
 
   handleBack() {
     this.props.history.goBack();
+  }
+
+  handleTransferencia() {
+    fetch("http://localhost:5000/api/Redirecionar", {
+      method: "post",
+      headers: { "Content-Type": "application/json;" },
+      body: JSON.stringify(this.state.transf, this.state.numChamado)
+    }).then(Response => Response.json());
   }
 
   render() {
@@ -147,25 +156,59 @@ export class PageChamado extends Component {
                     <Form.Row>
                       <Form.Group as={Col}>
                         <Form.Label>Transferir para:</Form.Label>
-                        <Form.Control as="select">
+                        <Form.Control
+                          as="select"
+                          onChange={evt =>
+                            this.setState({
+                              transf: {
+                                ...this.state.transf,
+                                setor: evt.target.value
+                              }
+                            })
+                          }
+                        >
                           <option>Setores</option>
-                          <option>...</option>
+                          <option>a</option>
                         </Form.Control>
                       </Form.Group>
                       <Form.Group as={Col}>
                         <Form.Label>Prioridade:</Form.Label>
-                        <Form.Control as="select">
+                        <Form.Control
+                          as="select"
+                          onChange={evt =>
+                            this.setState({
+                              transf: {
+                                ...this.state.transf,
+                                prioridade: evt.target.value
+                              }
+                            })
+                          }
+                        >
                           <option>Prioridade</option>
-                          <option>...</option>
+                          <option>a</option>
                         </Form.Control>
                       </Form.Group>
                     </Form.Row>
                     <Form.Group>
                       <Form.Label>Descrição:</Form.Label>
-                      <Form.Control as="textarea" rows="3" />
+                      <Form.Control
+                        as="textarea"
+                        rows="3"
+                        onChange={evt =>
+                          this.setState({
+                            transf: {
+                              ...this.state.transf,
+                              descricao: evt.target.value
+                            }
+                          })
+                        }
+                      />
                     </Form.Group>
                     <Link to="/">
-                      <Button variant="primary" type="submit">
+                      <Button
+                        variant="primary"
+                        onClick={this.handleTransferencia}
+                      >
                         Transferir
                       </Button>
                     </Link>
