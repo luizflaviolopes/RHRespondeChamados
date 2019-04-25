@@ -21,6 +21,13 @@
 {
     background-color: #841E19;
     color: #FFF8F0;
+    border-color: #841E19;
+}
+
+.btn-menu:hover
+{
+  background-color: #9A4642;
+  border-color: #9A4642;
 }
 .menu-l .btn-block + .btn-block
 {

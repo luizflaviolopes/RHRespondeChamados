@@ -5,7 +5,7 @@ import "./css/bootstrap.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import TabelaIndex from "./ChamadosRH/TabelaIndex.js";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 import { PageChamado } from "./ChamadosRH/PageChamado.js";
 import Botoes from "./Layout/Botoes.js";
 import "./css/Botoes.css";
@@ -15,22 +15,31 @@ import SideMenuIndex from "./SideMenuIndex.js";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import Formulario from "./ChamadosRH/Formulario.js";
+import Formulario from "./Aministrador/Formulario.js";
+import User from "./Aministrador/User";
+
+
 
 library.add(fas);
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { answerModal: false,
-                   newCallModal: false };
+    this.state = {
+      redirect: false,
+      answerModal: false,
+      newCallModal: false
+    };
+    this.OnclickHande = this.OnclickHande.bind(this);
   }
-
+  OnclickHande() {
+    this.setState({ redirect: true });
+  }
   render() {
     let lgClose = () =>
       this.setState({
         answerModal: false,
-        newCallModal:false
+        newCallModal: false
       });
 
     return (
@@ -38,6 +47,35 @@ class App extends Component {
         <BrowserRouter>
           <Cabecalho />
           <Menu>
+            <Link to="/User">
+              <Button className="btn-menu"
+                onClick={this.OnclickHande}>
+                Usuarios 
+              </Button>
+            </Link>
+            <Button
+              className="btn-menu"
+              onClick={() => this.setState({ newCallModal: true })}
+            >
+              Novo Chamado
+            </Button>
+            <Modal
+              size="lg"
+              show={this.state.newCallModal}
+              onHide={lgClose}
+              dialogClassName="sizeModalLG"
+              aria-labelledby="Respostas-Chamados"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title id="Respostas-Chamados">
+                  Novo Chamado
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Formulario />
+              </Modal.Body>
+            </Modal>
+
             <Botoes label="Relatórios" styleName="btn-menu" />
             <Botoes label="Acompanhamento" styleName="btn-menu" />
             <Button
@@ -103,30 +141,6 @@ class App extends Component {
               </Modal.Body>
             </Modal>
 
-            <Button
-              className="btn-menu"
-              onClick={() => this.setState({ newCallModal: true })}
-              >
-              Novo Chamado
-            </Button>
-            <Modal
-              size="lg"
-              show={this.state.newCallModal}
-              onHide={lgClose}
-              dialogClassName="sizeModalLG"
-              aria-labelledby="Respostas-Chamados"
-            >
-              <Modal.Header closeButton>
-                <Modal.Title id="Respostas-Chamados">
-                  Novo Chamado 
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <Formulario/>
-              </Modal.Body>
-            </Modal>
-            
-
           </Menu>
           <Container fluid={true} className="position-relative">
             <div className="allScreen">
@@ -140,6 +154,7 @@ class App extends Component {
                 <Route path="/" exact={true} component={TabelaIndex} />
                 <Route path="/Chamados/:tipo" component={TabelaIndex} />
                 <Route path="/DetalhamentoChamado" component={PageChamado} />
+                <Route path="/User" component={User} />
               </Switch>
             </div>
           </Container>
