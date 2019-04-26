@@ -1,37 +1,33 @@
 import React, { Component } from "react";
-import "./css/App.css";
-import "./css/bootstrap.css";
-import "./css/Botoes.css";
+import "../css/bootstrap.css";
+import "../css/Botoes.css";
+import "../css/App.css";
 import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-class MenuIndex extends Component {
+import "../css/menu.css"
+class MenuUser extends Component {
   constructor(props) {
     super(props);
-    this.state = { eventKey: null };
+    this.state = {};
   }
 
   render() {
     return (
-      <SideNav
-        onSelect={selected => {
-          this.props.history.push("/Chamados/" + selected);
-        }}
-      >
+      <SideNav>
         <SideNav.Toggle />
-        <SideNav.Nav defaultSelected="Todos">
-          <NavItem eventKey="Todos">
+        <SideNav.Nav>
+          <NavItem eventKey="usuarios">
             <NavIcon>
-              <FontAwesomeIcon icon="folder" />
+              <FontAwesomeIcon icon="user" />
             </NavIcon>
-            <NavText>Todos</NavText>
+            <NavText>Usuarios</NavText>
           </NavItem>
-          <NavItem eventKey="Abertos">
+          <NavItem eventKey="newUser">
             <NavIcon>
-              <FontAwesomeIcon icon="folder-open" />
+              <FontAwesomeIcon icon="user-plus" />
             </NavIcon>
-            <NavText>Abertos</NavText>
+            <NavText>Adicionar Usuarios</NavText>
           </NavItem>
           <NavItem eventKey="Atendimento">
             <NavIcon>
@@ -63,4 +59,4 @@ class MenuIndex extends Component {
   }
 }
 
-export default MenuIndex;
+export default MenuUser;

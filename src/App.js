@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import Menu, { Cabecalho, Rodape } from "./Layout/Menu.js";
-import "./css/App.css";
-import "./css/bootstrap.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import TabelaIndex from "./ChamadosRH/TabelaIndex.js";
 import { BrowserRouter, Switch, Route, Redirect, Link } from "react-router-dom";
 import { PageChamado } from "./ChamadosRH/PageChamado.js";
 import Botoes from "./Layout/Botoes.js";
-import "./css/Botoes.css";
-import Container from "react-bootstrap/Container";
-import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 import SideMenuIndex from "./SideMenuIndex.js";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Formulario from "./Aministrador/Formulario.js";
 import User from "./Aministrador/User";
+import Container from "react-bootstrap/Container";
+import "@trendmicro/react-sidenav/dist/react-sidenav.css";
+import "./css/App.css";
+import "./css/bootstrap.css";
+import "./css/Botoes.css";
 
 
 
