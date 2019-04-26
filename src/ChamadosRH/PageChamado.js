@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import "../css/PageChamado.css";
 
 import { Link } from "react-router-dom";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { Modal, Form, Button, Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Respostas } from "./Respostas.js";
+import { ModalTransferir } from "./ModalTransferir";
 
 export class PageChamado extends Component {
   constructor(props) {
@@ -22,6 +19,7 @@ export class PageChamado extends Component {
     };
     this.handleBack = this.handleBack.bind(this);
     this.handleAnswer = this.handleAnswer.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
   handleAnswer() {
@@ -32,14 +30,11 @@ export class PageChamado extends Component {
     this.props.history.goBack();
   }
 
-  render() {
-    let lgClose = () =>
-      this.setState({
-        transferModal: false,
-        answerModal: false,
-        historyModal: false
-      });
+  handleCloseModal(modal) {
+    this.setState({ [modal]: false });
+  }
 
+  render() {
     return (
       <div className="PageChamados">
         <div className="form-group text-center">
@@ -131,47 +126,11 @@ export class PageChamado extends Component {
                 <FontAwesomeIcon icon="exchange-alt" /> Redirecionar
               </Button>
 
-              <Modal
-                size="lg"
+              <ModalTransferir
                 show={this.state.transferModal}
-                onHide={lgClose}
-                aria-labelledby="example-modal-sizes-title-lg"
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title id="example-modal-sizes-title-lg">
-                    Transferir Chamado {this.state.numChamado}
-                  </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <Form>
-                    <Form.Row>
-                      <Form.Group as={Col}>
-                        <Form.Label>Transferir para:</Form.Label>
-                        <Form.Control as="select">
-                          <option>Setores</option>
-                          <option>...</option>
-                        </Form.Control>
-                      </Form.Group>
-                      <Form.Group as={Col}>
-                        <Form.Label>Prioridade:</Form.Label>
-                        <Form.Control as="select">
-                          <option>Prioridade</option>
-                          <option>...</option>
-                        </Form.Control>
-                      </Form.Group>
-                    </Form.Row>
-                    <Form.Group>
-                      <Form.Label>Descrição:</Form.Label>
-                      <Form.Control as="textarea" rows="3" />
-                    </Form.Group>
-                    <Link to="/">
-                      <Button variant="primary" type="submit">
-                        Transferir
-                      </Button>
-                    </Link>
-                  </Form>
-                </Modal.Body>
-              </Modal>
+                modalName="transferModal"
+                close={this.handleCloseModal}
+              />
             </Col>
             <Col sm={3}>
               <Button variant="success" onClick={this.handleAnswer}>
