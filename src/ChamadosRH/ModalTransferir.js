@@ -10,7 +10,8 @@ export class ModalTransferir extends Component {
       show: props.show,
       modalName: props.modalName,
       setores: [],
-      prioridades: []
+      prioridades: [],
+      transf: { formulario: props.numChamado }
     };
     this.openModal = this.openModal.bind(this);
     this.handleTransferencia = this.handleTransferencia.bind(this);
@@ -49,7 +50,7 @@ export class ModalTransferir extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-            Transferir Chamado {this.state.numChamado}
+            Transferir Chamado {this.state.transf.formulario}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

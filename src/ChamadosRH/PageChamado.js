@@ -121,7 +121,11 @@ export class PageChamado extends Component {
             <Col sm={3}>
               <Button
                 variant="primary"
-                onClick={() => this.setState({ transferModal: true })}
+                onClick={() =>
+                  this.setState({
+                    transferModal: true
+                  })
+                }
               >
                 <FontAwesomeIcon icon="exchange-alt" /> Redirecionar
               </Button>
@@ -130,6 +134,7 @@ export class PageChamado extends Component {
                 show={this.state.transferModal}
                 modalName="transferModal"
                 close={this.handleCloseModal}
+                numChamado={this.state.numChamado}
               />
             </Col>
             <Col sm={3}>
